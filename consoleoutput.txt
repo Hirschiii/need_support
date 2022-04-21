@@ -1,0 +1,263 @@
+WARNING: One or more updates/rebuilds have been skipped due to a dependency conflict:
+
+sys-libs/zlib:0
+
+  (sys-libs/zlib-1.2.11-r4:0/1::gentoo, ebuild scheduled for merge) USE="(split-usr) -minizip -static-libs" ABI_X86="(64) -32 (-x32)" conflicts with
+    sys-libs/zlib:0/1=[abi_x86_32(-),abi_x86_64(-)] required by (sys-devel/llvm-13.0.1:13/13::gentoo, installed) USE="binutils-plugin libffi ncurses xml -debug -doc -exegesis -libedit -test -xar -z3" ABI_X86="32 (64) (-x32)" LLVM_TARGETS="(AArch64) (AMDGPU) (ARM) (AVR) (BPF) (Hexagon) (Lanai) (MSP430) (Mips) (NVPTX) (PowerPC) (RISCV) (Sparc) (SystemZ) (WebAssembly) (X86) (XCore) (-ARC) (-CSKY) (-M68k) (-VE)"
+
+    >=sys-libs/zlib-1.2.8-r1:=[abi_x86_32(-),abi_x86_64(-)] required by (x11-libs/libpciaccess-0.16-r1:0/0::gentoo, installed) USE="zlib" ABI_X86="32 (64) (-x32)"
+
+    >=sys-libs/zlib-1.2.8-r1:=[abi_x86_32(-),abi_x86_64(-)] required by (dev-libs/libxml2-2.9.13-r1:2/2::gentoo, installed) USE="icu python readline -debug -examples -lzma -static-libs -test" ABI_X86="32 (64) (-x32)" PYTHON_TARGETS="python3_9 -python3_10 -python3_8"
+
+    >=sys-libs/zlib-1.2.8[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+    >=sys-libs/zlib-1.2.8-r1:0/1=[abi_x86_32(-),abi_x86_64(-)] required by (dev-libs/libxml2-2.9.13-r1:2/2::gentoo, installed) USE="icu python readline -debug -examples -lzma -static-libs -test" ABI_X86="32 (64) (-x32)" PYTHON_TARGETS="python3_9 -python3_10 -python3_8"
+
+    sys-libs/zlib:0=[abi_x86_32(-),abi_x86_64(-)] required by (sys-devel/llvm-13.0.1:13/13::gentoo, installed) USE="binutils-plugin libffi ncurses xml -debug -doc -exegesis -libedit -test -xar -z3" ABI_X86="32 (64) (-x32)" LLVM_TARGETS="(AArch64) (AMDGPU) (ARM) (AVR) (BPF) (Hexagon) (Lanai) (MSP430) (Mips) (NVPTX) (PowerPC) (RISCV) (Sparc) (SystemZ) (WebAssembly) (X86) (XCore) (-ARC) (-CSKY) (-M68k) (-VE)"
+
+    sys-libs/zlib[minizip] required by (dev-libs/quazip-1.2:0/1::gentoo, installed) USE="-test" ABI_X86="(64)"
+                  ^^^^^^^
+    >=sys-libs/zlib-1.2.8-r1:0/1=[abi_x86_32(-),abi_x86_64(-)] required by (x11-libs/libpciaccess-0.16-r1:0/0::gentoo, installed) USE="zlib" ABI_X86="32 (64) (-x32)"
+
+
+media-libs/gd:2
+
+  (media-libs/gd-2.3.2-r1:2/3::gentoo, ebuild scheduled for merge) USE="jpeg png tiff truetype zlib -avif -fontconfig -heif -static-libs -test -webp -xpm" ABI_X86="(64) -32 (-x32)" CPU_FLAGS_X86="sse" conflicts with
+    >=media-libs/gd-2.0.34:2/3=[fontconfig,jpeg,png,truetype,zlib] required by (media-gfx/graphviz-2.49.0-r1:0/0::gentoo, installed) USE="X cairo java nls pdf qt5 svg -devil -doc -examples -gtk2 -gts -guile -lasi -lefty -perl -postscript -python -ruby -tcl -webp" ABI_X86="(64)" PYTHON_SINGLE_TARGET="python3_9 -python3_10 -python3_8"
+                                ^^^^^^^^^^
+    >=media-libs/gd-2.0.34:=[fontconfig,jpeg,png,truetype,zlib] required by (media-gfx/graphviz-2.49.0-r1:0/0::gentoo, installed) USE="X cairo java nls pdf qt5 svg -devil -doc -examples -gtk2 -gts -guile -lasi -lefty -perl -postscript -python -ruby -tcl -webp" ABI_X86="(64)" PYTHON_SINGLE_TARGET="python3_9 -python3_10 -python3_8"
+                             ^^^^^^^^^^
+
+sys-devel/llvm:13
+
+  (sys-devel/llvm-13.0.1:13/13::gentoo, ebuild scheduled for merge) USE="binutils-plugin libffi ncurses xml -debug -doc -exegesis -libedit -test -xar -z3" ABI_X86="(64) -32 (-x32)" LLVM_TARGETS="(AArch64) (AMDGPU) (ARM) (AVR) (BPF) (Hexagon) (Lanai) (MSP430) (Mips) (NVPTX) (PowerPC) (RISCV) (Sparc) (SystemZ) (WebAssembly) (X86) (XCore) (-ARC) (-CSKY) (-M68k) (-VE)" conflicts with
+    <sys-devel/llvm-14:13/13=[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+    <sys-devel/llvm-14:=[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+    sys-devel/llvm:13[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+
+x11-libs/libX11:0
+
+  (x11-libs/libX11-1.7.3:0/0::gentoo, ebuild scheduled for merge) USE="ipv6 -doc -test" ABI_X86="(64) -32 (-x32)" conflicts with
+    x11-libs/libX11[abi_x86_32] required by (games-util/steam-launcher-1.0.0.74-r1:0/0::steam-overlay, installed) USE="joystick steamruntime udev" ABI_X86="(64)"
+                    ^^^^^^^^^^
+    >=x11-libs/libX11-1.6.2[abi_x86_32(-),abi_x86_64(-)] required by (x11-libs/libXrandr-1.5.2:0/0::gentoo, installed) USE="-doc" ABI_X86="32 (64) (-x32)"
+
+    >=x11-libs/libX11-1.6.2[abi_x86_32(-),abi_x86_64(-)] required by (x11-libs/libXxf86vm-1.1.4-r2:0/0::gentoo, installed) USE="-doc" ABI_X86="32 (64) (-x32)"
+
+    >=x11-libs/libX11-1.6.2:=[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+    >=x11-libs/libX11-1.6.2:=[abi_x86_32(-),abi_x86_64(-)] required by (x11-libs/libXext-1.3.4:0/0::gentoo, installed) USE="-doc" ABI_X86="32 (64) (-x32)"
+
+    x11-libs/libX11[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/libglvnd-1.4.0:0/0::gentoo, installed) USE="X -test" ABI_X86="32 (64) (-x32)"
+
+    >=x11-libs/libX11-1.6.2:0/0=[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+    >=x11-libs/libX11-1.6.2[abi_x86_32(-),abi_x86_64(-)] required by (x11-libs/libXrender-0.9.10-r2:0/0::gentoo, installed) USE="" ABI_X86="32 (64) (-x32)"
+
+    >=x11-libs/libX11-1.6.2:0/0=[abi_x86_32(-),abi_x86_64(-)] required by (x11-libs/libXext-1.3.4:0/0::gentoo, installed) USE="-doc" ABI_X86="32 (64) (-x32)"
+
+    >=x11-libs/libX11-1.6.2[abi_x86_32(-),abi_x86_64(-)] required by (x11-libs/libXfixes-6.0.0:0/0::gentoo, installed) USE="-doc" ABI_X86="32 (64) (-x32)"
+
+
+x11-libs/libXau:0
+
+  (x11-libs/libXau-1.0.9-r1:0/0::gentoo, ebuild scheduled for merge) USE="-doc" ABI_X86="(64) -32 (-x32)" conflicts with
+    x11-libs/libXau[abi_x86_32] required by (games-util/steam-launcher-1.0.0.74-r1:0/0::steam-overlay, installed) USE="joystick steamruntime udev" ABI_X86="(64)"
+                    ^^^^^^^^^^
+    >=x11-libs/libXau-1.0.7-r1[abi_x86_32(-),abi_x86_64(-)] required by (x11-libs/libxcb-1.14:0/1.12::gentoo, installed) USE="xkb -doc (-selinux) -test" ABI_X86="32 (64) (-x32)"
+
+
+x11-libs/libxcb:0
+
+  (x11-libs/libxcb-1.14:0/1.12::gentoo, ebuild scheduled for merge) USE="xkb -doc (-selinux) -test" ABI_X86="(64) -32 (-x32)" conflicts with
+    >=x11-libs/libxcb-1.11.1[abi_x86_32(-),abi_x86_64(-)] required by (x11-libs/libX11-1.7.3:0/0::gentoo, installed) USE="ipv6 -doc -test" ABI_X86="32 (64) (-x32)"
+
+    >=x11-libs/libxcb-1.13:0/1.12=[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+    x11-libs/libxcb[abi_x86_32] required by (games-util/steam-launcher-1.0.0.74-r1:0/0::steam-overlay, installed) USE="joystick steamruntime udev" ABI_X86="(64)"
+                    ^^^^^^^^^^
+    >=x11-libs/libxcb-1.13:=[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+
+x11-libs/libXdmcp:0
+
+  (x11-libs/libXdmcp-1.1.3-r1:0/0::gentoo, ebuild scheduled for merge) USE="-doc" ABI_X86="(64) -32 (-x32)" conflicts with
+    x11-libs/libXdmcp[abi_x86_32] required by (games-util/steam-launcher-1.0.0.74-r1:0/0::steam-overlay, installed) USE="joystick steamruntime udev" ABI_X86="(64)"
+                      ^^^^^^^^^^
+    >=x11-libs/libXdmcp-1.1.1-r1[abi_x86_32(-),abi_x86_64(-)] required by (x11-libs/libxcb-1.14:0/1.12::gentoo, installed) USE="xkb -doc (-selinux) -test" ABI_X86="32 (64) (-x32)"
+
+
+dev-libs/libbsd:0
+
+  (dev-libs/libbsd-0.11.3:0/0::gentoo, ebuild scheduled for merge) USE="-static-libs" ABI_X86="(64) -32 (-x32)" conflicts with
+    dev-libs/libbsd[abi_x86_32(-),abi_x86_64(-)] required by (x11-libs/libXdmcp-1.1.3-r1:0/0::gentoo, installed) USE="-doc" ABI_X86="32 (64) (-x32)"
+
+
+app-crypt/libmd:0
+
+  (app-crypt/libmd-1.0.4:0/0::gentoo, ebuild scheduled for merge) USE="" ABI_X86="(64) -32 (-x32)" conflicts with
+    app-crypt/libmd[abi_x86_32(-),abi_x86_64(-)] required by (dev-libs/libbsd-0.11.3:0/0::gentoo, installed) USE="-static-libs" ABI_X86="32 (64) (-x32)"
+
+
+x11-base/xcb-proto:0
+
+  (x11-base/xcb-proto-1.14.1:0/0::gentoo, ebuild scheduled for merge) USE="" ABI_X86="(64) -32 (-x32)" PYTHON_TARGETS="python3_9 -python3_10 -python3_8" conflicts with
+    >=x11-base/xcb-proto-1.14[abi_x86_32(-),abi_x86_64(-)] required by (x11-libs/libxcb-1.14:0/1.12::gentoo, installed) USE="xkb -doc (-selinux) -test" ABI_X86="32 (64) (-x32)"
+
+
+app-arch/brotli:0
+
+  (app-arch/brotli-1.0.9-r3:0/1::gentoo, ebuild scheduled for merge) USE="-python -static-libs -test" ABI_X86="(64) -32 (-x32)" PYTHON_TARGETS="python3_9 (-pypy3) -python3_10 -python3_8" conflicts with
+    app-arch/brotli[python,python_targets_python3_9(-)] required by (dev-python/flask-compress-1.11:0/0::gentoo, installed) USE="-test" ABI_X86="(64)" PYTHON_TARGETS="python3_9 -python3_10 -python3_8"
+                    ^^^^^^
+
+dev-python/itsdangerous:0
+
+  (dev-python/itsdangerous-2.1.1:0/0::gentoo, ebuild scheduled for merge) USE="-test" ABI_X86="(64)" PYTHON_TARGETS="python3_9 (-pypy3) -python3_10 -python3_8" conflicts with
+    <dev-python/itsdangerous-2[python_targets_python3_9(-)] required by (dev-python/flask-1.1.4:0/0::gentoo, installed) USE="-doc -examples -test" ABI_X86="(64)" PYTHON_TARGETS="python3_9 (-pypy3) -python3_8"
+    ^                        ^
+
+dev-python/jinja:0
+
+  (dev-python/jinja-3.0.3:0/0::gentoo, ebuild scheduled for merge) USE="-doc -examples -test" ABI_X86="(64)" PYTHON_TARGETS="python3_9 (-pypy3) -python3_10 -python3_8" conflicts with
+    <dev-python/jinja-3[python_targets_python3_9(-)] required by (dev-python/flask-1.1.4:0/0::gentoo, installed) USE="-doc -examples -test" ABI_X86="(64)" PYTHON_TARGETS="python3_9 (-pypy3) -python3_8"
+    ^                                        ^
+
+dev-python/werkzeug:0
+
+  (dev-python/werkzeug-2.0.3:0/0::gentoo, ebuild scheduled for merge) USE="-test" ABI_X86="(64)" PYTHON_TARGETS="python3_9 (-pypy3) -python3_10 -python3_8" conflicts with
+    <dev-python/werkzeug-2[python_targets_python3_9(-)] required by (dev-python/flask-1.1.4:0/0::gentoo, installed) USE="-doc -examples -test" ABI_X86="(64)" PYTHON_TARGETS="python3_9 (-pypy3) -python3_8"
+    ^                    ^
+
+virtual/opengl:0
+
+  (virtual/opengl-7.0-r2:0/0::gentoo, ebuild scheduled for merge) USE="" ABI_X86="(64) -32 (-x32)" conflicts with
+    virtual/opengl[abi_x86_32] required by (games-util/steam-launcher-1.0.0.74-r1:0/0::steam-overlay, installed) USE="joystick steamruntime udev" ABI_X86="(64)"
+                   ^^^^^^^^^^
+
+media-libs/mesa:0
+
+  (media-libs/mesa-21.3.7:0/0::gentoo, ebuild scheduled for merge) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="(64) -32 (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware" conflicts with
+    >=media-libs/mesa-9.1.6[X(+),abi_x86_32(-),abi_x86_64(-)] required by (virtual/opengl-7.0-r2:0/0::gentoo, installed) USE="" ABI_X86="32 (64) (-x32)"
+
+
+dev-libs/expat:0
+
+  (dev-libs/expat-2.4.7:0/0::gentoo, ebuild scheduled for merge) USE="unicode -examples -static-libs" ABI_X86="(64) -32 (-x32)" conflicts with
+    >=dev-libs/expat-2.1.0-r3:=[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+    >=dev-libs/expat-2.1.0-r3:0/0=[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+
+media-libs/libglvnd:0
+
+  (media-libs/libglvnd-1.4.0:0/0::gentoo, ebuild scheduled for merge) USE="X -test" ABI_X86="(64) -32 (-x32)" conflicts with
+    >=media-libs/libglvnd-1.3.2[X,abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+
+x11-libs/libdrm:0
+
+  (x11-libs/libdrm-2.4.109:0/0::gentoo, ebuild scheduled for merge) USE="-libkms -valgrind" ABI_X86="(64) -32 (-x32)" VIDEO_CARDS="intel -amdgpu (-exynos) (-freedreno) -nouveau (-omap) -radeon (-tegra) (-vc4) (-vivante) -vmware" conflicts with
+    >=x11-libs/libdrm-2.4.107[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+
+x11-libs/libxshmfence:0
+
+  (x11-libs/libxshmfence-1.3-r2:0/0::gentoo, ebuild scheduled for merge) USE="" ABI_X86="(64) -32 (-x32)" conflicts with
+    >=x11-libs/libxshmfence-1.1:0/0=[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+    >=x11-libs/libxshmfence-1.1:=[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+
+x11-libs/libXext:0
+
+  (x11-libs/libXext-1.3.4:0/0::gentoo, ebuild scheduled for merge) USE="-doc" ABI_X86="(64) -32 (-x32)" conflicts with
+    x11-libs/libXext[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/libglvnd-1.4.0:0/0::gentoo, installed) USE="X -test" ABI_X86="32 (64) (-x32)"
+
+    >=x11-libs/libXext-1.3.2:0/0=[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+    >=x11-libs/libXext-1.3.2[abi_x86_32(-),abi_x86_64(-)] required by (x11-libs/libXrandr-1.5.2:0/0::gentoo, installed) USE="-doc" ABI_X86="32 (64) (-x32)"
+
+    >=x11-libs/libXext-1.3.2[abi_x86_32(-),abi_x86_64(-)] required by (x11-libs/libXxf86vm-1.1.4-r2:0/0::gentoo, installed) USE="-doc" ABI_X86="32 (64) (-x32)"
+
+    >=x11-libs/libXext-1.3.2:=[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+
+x11-libs/libXxf86vm:0
+
+  (x11-libs/libXxf86vm-1.1.4-r2:0/0::gentoo, ebuild scheduled for merge) USE="-doc" ABI_X86="(64) -32 (-x32)" conflicts with
+    >=x11-libs/libXxf86vm-1.1.3:=[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+    >=x11-libs/libXxf86vm-1.1.3:0/0=[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+
+x11-libs/libXfixes:0
+
+  (x11-libs/libXfixes-6.0.0:0/0::gentoo, ebuild scheduled for merge) USE="-doc" ABI_X86="(64) -32 (-x32)" conflicts with
+    x11-libs/libXfixes:=[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+    x11-libs/libXfixes:0/0=[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+
+app-arch/zstd:0
+
+  (app-arch/zstd-1.5.2:0/1::gentoo, ebuild scheduled for merge) USE="threads -lz4 -static-libs" ABI_X86="(64) -32 (-x32)" conflicts with
+    app-arch/zstd:0/1=[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+    app-arch/zstd:=[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+
+x11-libs/libXrandr:0
+
+  (x11-libs/libXrandr-1.5.2:0/0::gentoo, ebuild scheduled for merge) USE="-doc" ABI_X86="(64) -32 (-x32)" conflicts with
+    x11-libs/libXrandr[abi_x86_32(-),abi_x86_64(-)] required by (media-libs/mesa-21.3.7:0/0::gentoo, installed) USE="X classic egl gallium gbm gles2 llvm zstd -d3d9 -debug -gles1 -lm-sensors -opencl -osmesa (-selinux) -test -unwind -vaapi -valgrind -vdpau -vulkan -vulkan-overlay -wayland -xa -xvmc -zink" ABI_X86="32 (64) (-x32)" CPU_FLAGS_X86="sse2" VIDEO_CARDS="i965 intel iris -crocus (-freedreno) -i915 (-lima) -nouveau (-panfrost) -r100 -r200 -r300 -r600 -radeon -radeonsi (-v3d) (-vc4) -virgl (-vivante) -vmware"
+
+
+x11-libs/libXrender:0
+
+  (x11-libs/libXrender-0.9.10-r2:0/0::gentoo, ebuild scheduled for merge) USE="" ABI_X86="(64) -32 (-x32)" conflicts with
+    >=x11-libs/libXrender-0.9.8[abi_x86_32(-),abi_x86_64(-)] required by (x11-libs/libXrandr-1.5.2:0/0::gentoo, installed) USE="-doc" ABI_X86="32 (64) (-x32)"
+
+
+dev-libs/libffi:0
+
+  (dev-libs/libffi-3.3-r2:0/7::gentoo, ebuild scheduled for merge) USE="-debug -pax-kernel -static-libs -test" ABI_X86="(64) -32 (-x32)" conflicts with
+    >=dev-libs/libffi-3.0.13-r1:0=[abi_x86_32(-),abi_x86_64(-)] required by (sys-devel/llvm-13.0.1:13/13::gentoo, installed) USE="binutils-plugin libffi ncurses xml -debug -doc -exegesis -libedit -test -xar -z3" ABI_X86="32 (64) (-x32)" LLVM_TARGETS="(AArch64) (AMDGPU) (ARM) (AVR) (BPF) (Hexagon) (Lanai) (MSP430) (Mips) (NVPTX) (PowerPC) (RISCV) (Sparc) (SystemZ) (WebAssembly) (X86) (XCore) (-ARC) (-CSKY) (-M68k) (-VE)"
+
+    >=dev-libs/libffi-3.0.13-r1:0/7=[abi_x86_32(-),abi_x86_64(-)] required by (sys-devel/llvm-13.0.1:13/13::gentoo, installed) USE="binutils-plugin libffi ncurses xml -debug -doc -exegesis -libedit -test -xar -z3" ABI_X86="32 (64) (-x32)" LLVM_TARGETS="(AArch64) (AMDGPU) (ARM) (AVR) (BPF) (Hexagon) (Lanai) (MSP430) (Mips) (NVPTX) (PowerPC) (RISCV) (Sparc) (SystemZ) (WebAssembly) (X86) (XCore) (-ARC) (-CSKY) (-M68k) (-VE)"
+
+
+sys-libs/ncurses:0
+
+  (sys-libs/ncurses-6.2_p20210619:0/6::gentoo, ebuild scheduled for merge) USE="cxx gpm (split-usr) (tinfo) -ada -debug -doc -minimal -profile -static-libs -test -trace" ABI_X86="(64) -32 (-x32)" conflicts with
+    >=sys-libs/ncurses-5.9-r3:0/6=[abi_x86_32(-),abi_x86_64(-)] required by (sys-devel/llvm-13.0.1:13/13::gentoo, installed) USE="binutils-plugin libffi ncurses xml -debug -doc -exegesis -libedit -test -xar -z3" ABI_X86="32 (64) (-x32)" LLVM_TARGETS="(AArch64) (AMDGPU) (ARM) (AVR) (BPF) (Hexagon) (Lanai) (MSP430) (Mips) (NVPTX) (PowerPC) (RISCV) (Sparc) (SystemZ) (WebAssembly) (X86) (XCore) (-ARC) (-CSKY) (-M68k) (-VE)"
+
+    >=sys-libs/ncurses-5.9-r3:0=[abi_x86_32(-),abi_x86_64(-)] required by (sys-devel/llvm-13.0.1:13/13::gentoo, installed) USE="binutils-plugin libffi ncurses xml -debug -doc -exegesis -libedit -test -xar -z3" ABI_X86="32 (64) (-x32)" LLVM_TARGETS="(AArch64) (AMDGPU) (ARM) (AVR) (BPF) (Hexagon) (Lanai) (MSP430) (Mips) (NVPTX) (PowerPC) (RISCV) (Sparc) (SystemZ) (WebAssembly) (X86) (XCore) (-ARC) (-CSKY) (-M68k) (-VE)"
+
+
+dev-libs/libxml2:2
+
+  (dev-libs/libxml2-2.9.13-r1:2/2::gentoo, ebuild scheduled for merge) USE="icu python readline -debug -examples -lzma -static-libs -test" ABI_X86="(64) -32 (-x32)" PYTHON_TARGETS="python3_9 -python3_10 -python3_8" conflicts with
+    dev-libs/libxml2:2=[abi_x86_32(-),abi_x86_64(-)] required by (sys-devel/llvm-13.0.1:13/13::gentoo, installed) USE="binutils-plugin libffi ncurses xml -debug -doc -exegesis -libedit -test -xar -z3" ABI_X86="32 (64) (-x32)" LLVM_TARGETS="(AArch64) (AMDGPU) (ARM) (AVR) (BPF) (Hexagon) (Lanai) (MSP430) (Mips) (NVPTX) (PowerPC) (RISCV) (Sparc) (SystemZ) (WebAssembly) (X86) (XCore) (-ARC) (-CSKY) (-M68k) (-VE)"
+
+    dev-libs/libxml2:2/2=[abi_x86_32(-),abi_x86_64(-)] required by (sys-devel/llvm-13.0.1:13/13::gentoo, installed) USE="binutils-plugin libffi ncurses xml -debug -doc -exegesis -libedit -test -xar -z3" ABI_X86="32 (64) (-x32)" LLVM_TARGETS="(AArch64) (AMDGPU) (ARM) (AVR) (BPF) (Hexagon) (Lanai) (MSP430) (Mips) (NVPTX) (PowerPC) (RISCV) (Sparc) (SystemZ) (WebAssembly) (X86) (XCore) (-ARC) (-CSKY) (-M68k) (-VE)"
+
+
+dev-libs/icu:0
+
+  (dev-libs/icu-70.1-r1:0/70.1::gentoo, ebuild scheduled for merge) USE="-debug -doc -examples -static-libs" ABI_X86="(64) -32 (-x32)" conflicts with
+    >=dev-libs/icu-51.2-r1:0/70.1=[abi_x86_32(-),abi_x86_64(-)] required by (dev-libs/libxml2-2.9.13-r1:2/2::gentoo, installed) USE="icu python readline -debug -examples -lzma -static-libs -test" ABI_X86="32 (64) (-x32)" PYTHON_TARGETS="python3_9 -python3_10 -python3_8"
+
+    >=dev-libs/icu-51.2-r1:=[abi_x86_32(-),abi_x86_64(-)] required by (dev-libs/libxml2-2.9.13-r1:2/2::gentoo, installed) USE="icu python readline -debug -examples -lzma -static-libs -test" ABI_X86="32 (64) (-x32)" PYTHON_TARGETS="python3_9 -python3_10 -python3_8"
+
+
+x11-libs/libpciaccess:0
+
+  (x11-libs/libpciaccess-0.16-r1:0/0::gentoo, ebuild scheduled for merge) USE="zlib" ABI_X86="(64) -32 (-x32)" conflicts with
+    >=x11-libs/libpciaccess-0.13.1-r1:0/0=[abi_x86_32(-),abi_x86_64(-)] required by (x11-libs/libdrm-2.4.109:0/0::gentoo, installed) USE="-libkms -valgrind" ABI_X86="32 (64) (-x32)" VIDEO_CARDS="intel -amdgpu (-exynos) (-freedreno) -nouveau (-omap) -radeon (-tegra) (-vc4) (-vivante) -vmware"
+
+    >=x11-libs/libpciaccess-0.13.1-r1:=[abi_x86_32(-),abi_x86_64(-)] required by (x11-libs/libdrm-2.4.109:0/0::gentoo, installed) USE="-libkms -valgrind" ABI_X86="32 (64) (-x32)" VIDEO_CARDS="intel -amdgpu (-exynos) (-freedreno) -nouveau (-omap) -radeon (-tegra) (-vc4) (-vivante) -vmware"ith
+    sys-lib!
